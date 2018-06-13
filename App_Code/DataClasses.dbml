@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="classroom" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\classroom.mdf;Integrated Security=True;User Instance=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.schedule" Member="schedules">
+    <Type Name="schedule">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="class_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sdate" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="stime" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="etime" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="location" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.user_login" Member="user_logins">
+    <Type Name="user_login">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="emailid" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="username" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="uid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Educator" Member="Educators">
+    <Type Name="Educator">
+      <Column Name="eid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="lname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Collage" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="position" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="state" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="city" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="contactno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="emailid" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="imagepath" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Student" Member="Students">
+    <Type Name="Student">
+      <Column Name="rid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="lname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Collage" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="state" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="city" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="contactno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="emailid" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="imagepath" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.e_class" Member="e_classes">
+    <Type Name="e_class">
+      <Column Name="classid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="eid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="course" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="member" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Invitation_data" Member="Invitation_datas">
+    <Type Name="Invitation_data">
+      <Column Name="iid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="eid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="classid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="message" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.groupformed" Member="groupformeds">
+    <Type Name="groupformed">
+      <Column Name="gi" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="gid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sid" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="groupformed_groupformed" Member="groupformed2" ThisKey="gi" OtherKey="gi" Type="groupformed" Cardinality="One" />
+      <Association Name="groupformed_groupformed" Member="groupformed1" ThisKey="gi" OtherKey="gi" Type="groupformed" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.groupdata" Member="groupdatas">
+    <Type Name="groupdata">
+      <Column Name="gid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="gname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="creator" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.student_class" Member="student_classes">
+    <Type Name="student_class">
+      <Column Name="classid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="sid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="eid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cid" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
